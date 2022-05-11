@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>scope</title>
+</head>
+<body>
+    <script>
+        //변수의 유효범위 {}
+        // let / const
+        let scope1 = 10;
+        {
+            let scope1 = 20;
+        }
+        console.log(scope1);
+
+        let scope2 = 30;
+        {
+            console.log(scope2);
+        }
+        
+        {
+            let scope3 = 40;
+        }
+        // console.log(scope3);
+
+        // var : 함수 스코프
+        {
+            var scopeVar = 50;
+        }
+        console.log(scopeVar);
+
+        var scopeVar2 = 60;
+        
+            console.log(scopeVar2);
+        (function(){
+            scopeVar2++;
+            console.log(scopeVar2);
+        })();
+
+        // (function(){
+        //     var scopeVar3 = 70;
+        //     console.log(scopeVar3);
+        // })();
+        // console.log(scopeVar3); //함수 내부에서 선언된 var은 외부에서 사용이 불가능하다
+
+
+        // hoisting : 끌어올리다
+        // 값은 있는데 출력이 되지 않음
+        // 정확한 출력값을 출력할 수 없다
+        console.log(hoist);
+        var hoist = 'hoist(var)';
+     
+        
+        //Let hoist
+        let hoistLet='hoist(let)';
+        console.log(hoistLet);
+
+        // 함수의 선언식과 표현식의 차이점
+        print1();
+        print2();
+        
+        function print1(){
+            console.log('print1');
+        } //전체 로직도 hoisting 가능
+
+        //표현식
+        let print2 =function(){
+            console.log('print2');
+        } //표현식의 경우 위에서 불러오면 오류가 뜸
+        // print2();
+
+        
+
+    </script>
+</body>
+</html>
