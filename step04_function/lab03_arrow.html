@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>arrow</title>
+</head>
+<body>
+    <script>
+        // let arrow = function(){
+        //     console.log("화살표 함수");
+        // }
+    let arrow = () =>{ console.log("화살표함수"); };
+    arrow();
+
+    // let add = function(x, y){
+    //     return x + y;
+    // }
+
+    let add = (x, y) => {return x + y;}
+
+    console.log (add(1, 2));
+
+    let printName = name => console.log(name); // 하나만 값이 있을 경우 괄호 필요 x 하지만 두개이상일 땐 써야함
+    printName('js');
+
+    (function imdfuntion(){
+        console.log("즉시실행함수1");
+    })();
+    (function imdfuntion2(){
+        console.log("즉시실행함수2");
+    }());
+
+    // 매개변수가 있는 즉시 실행 함수 만들기
+    let name = "주경야독";
+    (function imdfuntion3(abc){
+        console.log(abc);
+    }(name));
+
+
+
+    </script>
+</body>
+</html>
