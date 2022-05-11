@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>type</title>
+</head>
+<body>
+    <script>
+        console.log(10); //양수
+        console.log(-10); //음수
+        console.log(10.2); // 실수
+        console.log(typeof(10));
+        console.log(typeof(10.2));
+        console.log(10/3);
+        //4가지 전부 number로 인식함
+        //NaN : 숫자가 아님을 나타냄
+        console.log('Ten'/3); // NaN
+        //Infinity : 무한
+        console.log(10/0);
+        console.log(typeof(10/0));
+
+        // String(문자열)
+        console.log('---문자열---');
+        console.log("큰따움표 문자열");
+        //두개 다 문자열로 인식
+        console.log("큰따움표 안에 '작은따움표'");
+        console.log('작은따움표 안에 "큰따움표"');
+        //둘다 사용은 가능 
+
+        //escape 문자뒤에 특정 문자를 출력하고싶을 때 사용
+        console.log("큰따움표 안에 \"큰따움표\"");
+        // console.log("한줄
+        // 띄어쓰기"); //SyntaxError: Invalid or unexpected 에러발생
+        
+        //백틱`
+        console.log(`한줄
+        띄어쓰기`);
+
+        //백틱 적용사례
+        let lecture = "JS";
+        console.log('우리는 JS 학습중입니다'); //JS를 값으로는 출력이 가능함
+        console.log('우리는 lecture 학습중입니다'); // lecture를 하나의 문자열로 인식해서 그대로 표시됌
+        console.log('우리는' + lecture + '학습중입니다'); // + 기호를 통해 연결시켜줘야함
+        console.log(`우리는 ${lecture}학습중입니다`); //백틱 사용
+
+        console.log('----Boolean타입----');
+        console.log(true);
+        console.log(false);
+        console.log(1>2); // 참인지 거짓인지 자동으로 판별
+        
+        console.log('----undefined & Null----');
+        console.log(typeof(def));
+        // null
+        console.log(null);
+        console.log(typeof(null));
+
+        console.log('---- Symbol ----');
+        let a = Symbol();
+        console.log(a);
+        console.log(typeof(a));
+        let b =Symbol('js');
+        let c =Symbol('js');
+        console.log(b == c); // b와 c는 같은 값이지만 false가 나옴
+
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var x;
+        console.log(x);
+        x = 10;
+        var x2 = 20; // 변수선언 + 할당 = 변수초기화
+        console.log(x2);
+        console.log(x);
+        x= 30; // 재초기화
+        console.log(x);
+        
+        var x =40; //선언도되고 할당도 새로 되기 때문에 원래사용하려고 했던 x라는 변수를 제대로 사용할 수 없게 됨
+        var x ='사십';
+        console.log(x);
+        
+        let y = 5 ;
+        y = 15;
+        // let y = 25;
+
+        // 변수의 범위(추가설명)
+        {
+            let y = 35;
+        }
+        // const : constant 상수
+        const c = 10;
+        console.log(c);
+        c= 20 ; // const는 변하면 안되는 값이기 때문에 새로운 값이 들어 갈 수 없다
+    </script>
+</body>
+</html>

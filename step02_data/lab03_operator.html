@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>operator</title>
+</head>
+<body>
+    <script>
+        console.log(1+2); //사칙연산
+        console.log((1+2) * 3);
+        console.log(1+(2*3));
+        let a = 1;
+        let b = 2;
+        console.log( a * b );
+
+        // % (나머지값)
+        console.log(10/3);
+        console.log(10%3);
+        console.log(2 % 3);
+
+        // **(제곱)
+        console.log(10 ** 3);
+
+        console.log('a' + 'b');
+        console.log('a' + 3);
+        console.log('a' % 'b');
+
+        //단항 연산
+        let c = 3;
+        console.log(c++);
+        console.log(c);
+
+        c = 4;
+        console.log(++c);
+        console.log(c);
+
+        // 대입연산
+        console.log("----대입연산----");
+        let x = 10;
+        x += 1;  // x += 1;
+        console.log(x);
+        x %= 3;  // 11 % 3 = 2
+        console.log(x);
+        console.log("----비교연산자----");
+        //부정연산자
+        console.log(3 != 3); //false
+        let y = 10;
+        let z = '10';
+        console.log(y == z); //true, == : 값만 같은지 비교 
+        console.log(y === z); // 동일한 type이 아니기 때문에 false
+
+        //논리연산
+        console.log("----논리연산자----");
+        // && : 모든 겨로가가 참일 때 ==> true
+        console.log((10>9) && ('a'==='a')); // true && ture
+        // || : 모든 결과가 거짓일 때 ==> flase
+        //      결과중 하나라도 참이라면 ==> true
+        console.log((10>9) || ('a'==='b'));
+        // ! : 최종 결과값의 반대 값 출력
+        console.log(!(10>9) &&('a'==='b')); 
+
+    </script>
+</body>
+</html>
