@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>event</title>
+
+    <style>
+        .hide{
+            display: none;
+        }
+        .invaild{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+
+
+        <div>
+            <h1>Menu</h1>
+            <div id="describe">설명</div>
+            <hr>
+            
+            <h3>서비스</h3>
+            <button id="check" class="tab" name="checkName">조회</button>
+            <button id="transfer" class="tab">이체</button>
+            <ul class="checkService hide">
+                <li>계좌조회</li>
+                <li>어음수표조회</li>
+                <li>오픈뱅킹업무</li>
+            </ul>
+            
+            <p id="content"></p>
+            <p id="content2"></p>
+            <hr>
+            
+            <h3>기입</h3>
+            이메일 : <input type="email" name="email" id="email">
+            <div id="invalidMsg"></div>
+            <div id="emailOutput"></div>
+        </div>
+
+
+        <script>
+
+    
+    // 이벤트 적용 문법
+    // 1. 인라인 방식
+    const describeElement = document.getElementById('describe');
+    // function clickFunc() {
+    //     describeElement.innerHTML = '계좌 조회 서비스';
+    // };
+    
+    // 2. 프로퍼티 방식(딱 하나만 사용이 가능하다)
+    const checkElement = document.getElementById('check');
+    // checkElement.onclick = function clickFunc() {
+    //     describeElement.innerHTML = '계좌 조회 서비스';
+    //  };
+    //
+     const contentElement = document.querySelector('#content');
+     const contentElement2 = document.querySelector('#content2');
+     
+    //  checkElement.onclick = function clickFunc() {
+    //     contentElement.innerHTML = '계좌 조회 서비스2';
+    //  };
+    //  console.log(contentElement);
+
+    // 3. 이벤트 핸들러
+    // checkElement.addEventListener('click', function clickFunc() {
+    // describeElement.innerHTML = '계좌 조회 서비스'; })
+  
+    //  checkElement.onclick = function clickFunc() {
+    //     contentElement.innerHTML = '계좌 조회 서비스2';
+    //  };
+
+    // ver1
+    // checkElement.addEventListener('click', function clickFunc() {
+    //     describeElement.innerHTML = '계좌 조회 서비스';
+    //     contentElement.innerHTML = '계좌 조회 서비스2';
+    // });
+    // ver2 (var1을 화살표 함수로 바꾸기)
+    // checkElement.addEventListener('click', () =>  {
+    // describeElement.innerHTML = '계좌 조회 서비스';
+    // contentElement.innerHTML = '계좌 조회 서비스2';
+    // });
+
+    // 이벤트종류
+    // MouseEvent : click, dbclick, mouseup, mousedown...
+
+    // 마우스 올리면 나타나고 사라지면 없어짐
+    // const checkServiceElement = document.querySelector('.checkService');
+    // // console.log(checkServiceElement);
+    // checkElement.addEventListener('mouseover', () =>{
+    //     //consol.log(checkServiceElement.classList.contains('hide'));
+    //     checkServiceElement.classList.remove('hide');
+    // })
+    // checkElement.addEventListener('mouseout', () =>{
+    //     checkServiceElement.classList.add('hide');
+    // })
+    
+    // FocusEvent : focus, blur, focusin, focusout...
+    // 이메일 입력을 하면 @없을 경우 이메일 형식이 올바르지 않음
+    const emailElement = document.getElementById('email');
+    const invalidMsg = document.getElementById('invalidMsg');
+    emailElement.addEventListener('focus', () => {
+        // emailElement.style.background ='yellow';
+
+    });
+    emailElement.addEventListener('blur', () => {
+        // emailElement.style.background ='blue'
+        if(emailElement.value.includes('@')){
+            invalidMsg.innerHTML = '';
+        }else {
+            invalidMsg.innerHTML = '이메일 형식이 올바르지 않음';
+            invalidMsg.classList.add('invaild');
+        }
+    });    
+
+    //keyboardEvent : keydown, key
+    const emailOutput = document.getElementById('emailOutput');
+    emailElement.addEventListener('keydown', (event) => {
+        emailOutput.innerHTML += event.key;
+    });
+
+
+
+    
+        </script>
+    
+</body>
+</html>

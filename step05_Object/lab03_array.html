@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>array1</title>
+</head>
+<body>
+    <script>
+        let arr3 = [1,2,3,4,5];
+        // arr3.push(6,7,8);
+        // console.log(arr3);
+        // 맨앞에 요소 추가
+        // console.log("맨앞에 요소 추가");
+        // arr3.unshift(0);
+        // console.log(arr3);
+        // console.log("요소 삭제");
+        // arr3.pop();
+        // arr3.pop();
+        // console.log(arr3.pop());
+        // console.log(arr3);
+
+        //shift()
+        // console.log(arr3);
+        // console.log(arr3.shift());
+        // console.log(arr3);
+
+        //splice(index)
+        // console.log(arr3);
+        // arr3.splice(2);
+        // console.log(arr3);
+
+        //splice(idx1, idx2)
+        // console.log(arr3);
+        // arr3.splice(2, 2);
+        // console.log(arr3);
+        
+        // console.log(arr3);
+        // arr3.splice(1, 2, 0); // 요소를 삭제하고 요소를 넣어줌
+        // console.log(arr3);
+
+        //slice(idx1, idx2)
+        // console.log(arr3);
+        // arr3.slice(2, 3);
+        // console.log(arr3.slice(2,4));
+
+        //indexOf : 해당 요소의 인덱스 값 변환
+        //없는 요소를 입력하게 되면 -1
+        // console.log(arr3);
+        // console.log(arr3.indexOf(2));
+
+        //find : 테스트 함수의 조건에 맞는 첫번째 요소값을 반환
+        //findIndex : 테스트 함수의 조건에 맞는 첫번째 요소 값을 반환
+        // console.log(arr3);
+        //find
+        // let even = arr3.find((value) => (value%2 == 0));
+        // console.log(even);
+        
+        // 나이가 10살 미만인 고양이만 검색
+        let cats = [
+            {name : '마일로', age:10},
+            {name : '앙꼬', age:8},
+            {name : '포우', age:12},
+            {name : '포니', age:5},
+            ]
+        console.log(cats);
+        let even1 = cats.find((obj) =>  (obj.age<10));
+        console.log(even1);
+        
+        //for ~ of
+        let cities = ["Busan", "Seoul", "Paris", "Jip"];
+        for (let city of cities){
+            console.log(city);
+        }
+
+        let likeArray ={
+            0: '오늘 점심',
+            1: '뭐먹지',
+             length : 2
+        }
+        // console.log(likeArray);
+
+        // for(let element of likeArray){
+        //     console.log(element);
+        // } //이터러블한 객체가 없어서 출력이 불가능함
+        
+        // Array.from() : 유사 배열을 받아서 진짜 배열로 만들어줌
+        let arr4 = Array.from(likeArray);
+        console.log(arr4);
+
+        for(let element of arr4){
+            console.log(element);
+        }
+
+        //Join
+        console.log(arr4.join(' ')); //''중간에 띄워쓰기로 구분가능 하이픈넣으면 하이픈으로 연결가능
+
+
+    // foreach() : 배열만 사용 가능한 메서드
+    let avengers = ["스파이더맨", "호크아이", "헐크"];
+
+// ver1
+// avengers.forEach((avenger) =>
+//                     console.log(avenger));
+
+// ver2
+// avengers.forEach(printName);
+// function printName(avenger) {
+//     console.log(avenger);
+// }
+
+// ver3
+// avengers.forEach(function printName(avenger) {
+//     console.log(avenger);
+// });
+
+     //map
+    let arr5 = [1,2,3,4,5];
+    // ?  arr5 요소들을 제곱하여 expo라고하는 배열에 담아줌
+    let expo = [];
+    for(let i=0; i< arr5.length; i++){
+        expo.push(arr5[i] * arr5[i]);
+    }
+    console.log(expo);
+
+    // forEach
+    arr5.forEach(expo1 => expo.push(expo1*expo1));
+    console.log(expo);
+
+    // map
+    arr5.map((n) => expo.push(n*n));
+    let expo2 = arr5.map((n) => n*n);
+    console.log(expo);
+    console.log(expo2);
+
+    const info = [
+    {
+        id: 1,
+        name: "js"
+    },
+    {
+        id: 2,
+        name: "javascript"
+    }
+    ];
+    const names = info.map(info => info.name);
+    console.log(names);
+
+
+    //filter()
+    const todos = [
+        {
+            id:1,
+            todo : '자격증공부',
+            done : true
+        },
+        {
+            id:2,
+            todo : '프로젝트',
+            done : false
+        },
+        {
+            id:3,
+            todo : '운동',
+            done : false
+        }
+    ];
+    console.log(todos);
+    // console.log(todos.find(todo => todo.id == 3));
+    // console.log(todos.find(todo => todo.done === true));
+    // console.log(todos.find(todo => todo.done === false));
+
+    console.log(todos.filter(todo => todo.done === false));
+
+    //reduce()
+
+    //위의arr5 사용
+    console.log(arr5);
+    //arr5 총합
+    let sum = 0;
+    arr5.forEach(num => {
+        sum += num;
+    });
+    console.log(sum);
+
+    
+    // let sumReduce = arr5.reduce((acc,current) =>{
+    //     acc+current
+    // }, sum);
+    // console.log(sumReduce);
+    sum = arr5.reduce((acc,cur) => acc+cur, 10);
+    console.log(sum);
+
+
+
+    </script>
+</body>
+</html>

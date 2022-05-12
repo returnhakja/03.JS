@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lab01_dom.html</title>
+    <style>
+        .blue {
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 이벤트 리스너 실습 -->
+<div id="dom">
+    <h1>Plus-Minus</h1>
+    <div id="result">0</div>
+    <button id="btn-plus" class="btn" name="plus-button">+1</button>
+    <button id="btn-minus" class="btn">-1</button>
+</div>
+
+    <script>
+        let result = document.getElementById('result');
+        console.log(result);
+        //    console.log(typeof result);
+        //    console.log(result.textContent)
+        let plus = document.getElementById('btn-plus');
+        //    console.log(plus);
+        let minus = document.getElementById('btn-minus');
+        //    console.log(minus);
+        let result2 = parseInt(result.textContent); 
+
+
+
+
+       plus.addEventListener('click', () => {
+            result2 = result2 + 1;
+            result.innerText = result2
+            console.log(result2);
+            //  console.log(plus);
+        });
+       
+       minus.addEventListener('click', () => {
+            result2 = result2 - 1;
+            result.innerText = result2
+             console.log(result2);
+        });
+
+
+    </script>
+</body>
+</html>

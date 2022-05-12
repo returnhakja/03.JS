@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>number</title>
+</head>
+<body>
+    <script>
+        //Number() : 문자열을 숫자로 변환/반환
+        let strNum = "10";
+        let strNaN = "Ten"; //절때 숫자로 바뀔 수 없음
+
+        console.log(typeof Number(strNum));
+        console.log(Number(strNaN));
+
+        //parseXXX()
+        //parseInt : 소수점을 제외하고 정수로 반환
+        // 문자열을 숫자타입으로 바꿔주는 역할
+
+        console.log(parseInt(3.14)); 
+        console.log(parseInt(3.54));
+
+        //parseFloat()
+        console.log(parseFloat("6.89"));
+
+        //Number.toFixed() : 지정한 소수점 자리까지만 넘김
+        let fixedNum = 142.3556345;
+        console.log(fixedNum.toFixed(3));
+    </script>
+</body>
+</html>
