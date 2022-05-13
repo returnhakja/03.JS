@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>json</title>
+</head>
+<body>
+    <script>
+    // Json
+    // JavaScript Object Notation
+    // 문자열의 형태로 데이터를 주고 받는 포맷
+    // - js의 내장객체(js 운영되는 전체 영역(gloable)접근 가능한 )
+    // - key : value 한 쌍으로 구성, “”따옴표가 붙어 있는 상태
+    // - Json.stringify : 객체를 JSON으로 변경 -> 직렬화
+    // - 객체, 배열, 문자형, 숫자형, boolean(true/false), null
+    // - 함수, 심볼, undefined → 적용안됌
+    
+    //1.
+    let obj1 = {name: "js"};
+    console.log(obj1);
+    console.log(obj1.name);
+    
+    let obj2 = "{'name' : 'js'}";
+    console.log(obj2);
+    console.log(obj2.name); // 왜 undefined 나옴 ??
+    // js객체가 아닌 문자열 형태라서 그럼 
+
+
+    //2.
+    // JSON.stringify
+    let obj3 = JSON.stringify(obj1); //js형태를 json형태로 바꿔준다
+    console.log(obj3);
+    console.log(typeof obj3);
+
+    //JSON.parse
+    // let obj4 = JSON.parse(obj2); //큰따옴표가 아니라서 JSON형태로 바꿀 수 없음
+    let obj5 = {"name": "js"};
+    let obj6 = '{"name": "js"}';
+    
+    console.log(obj5);
+    console.log(obj6);
+    // let obj55 = JSON.parse(obj5); // 전체가 물자열이 되야하는 오류발생
+     let obj66 = JSON.parse(obj6);
+     console.log(typeof obj66); //반드시 string 형태만 확인가능
+
+     //직렬화 잘될까....
+    
+
+
+    </script>
+</body>
+</html>
