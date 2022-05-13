@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>asyn</title>
+</head>
+<body>
+    <script>
+        // 동기 : 요청 결과 응답 후 다음 동작이 실행 되는 방식
+        // console.log(2);
+        console.log(1);
+        // console.log(3);
+        setTimeout(() => {
+            console.log(2);//내부동작실행
+        }, 1000);  //브라우저가 제공하는 것이기 때문에 브라우저 내부의 어떤 곳으로 잠깐 저장 후 다음꺼 실행 후 출력
+        console.log(3);
+
+        // callback function
+        //함수를 매개변수로 전달되는 함수 → 결과적으로 콜백함수는 전달 받은 함수 안에서 호출
+        function callBack(callback){
+            setTimeout(() =>{
+                callback();
+            }, 1000);
+        };
+        
+        // 콜백 지옥
+        callBack(() => {
+            console.log("1초뒤에 callback함수 실행");
+        });
+
+    callBack(() => {
+        callBack(() => {
+        console.log('2: 2초후에 실행됨');
+        });
+    });
+    
+
+    // Promise
+    // console.log(Promise);
+
+    //문법
+    
+    new Promise((resolve, reject) => {
+
+    })
+    //현재는 pending상태
+    //대기(pending): 프로미스 객체가 생성되어 대기 중인 상태
+
+    //이행(fulfilled): resolve()를 실행시켰을때의 상태
+    // new Promise((resolve, reject) => { 
+    //     resolve();
+    // })
+    //거부 : reject()를 실행시켰을때의 상태
+    // new Promise((resolve, reject) => { 
+    //     reject();
+    // })
+
+
+    // 1초 후 실행 함수
+    let promiseFunction = new Promise((resolve, reject) => {
+        setTimeout(()=>{
+            resolve();
+        },1000);
+    })
+    console.log(promiseFunction);
+    promiseFunction.then(()=>{
+        console.log('프로미스 실행');
+    });
+
+
+    </script>
+</body>
+</html>
