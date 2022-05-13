@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cocu</title>
+    <style>
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+            border: 5px solid blue;
+        }
+        .container>.div{
+            border: 3px dashed red;
+        }
+        .display, .result{
+            width: 400px;
+            height: 50px;
+            text-align: right;
+        }
+    
+        .button1{
+            display: flex;
+            justify-content: space-around;
+            flex-direction: row;
+            width: 400px;
+            height: 40px;
+            padding: 10px;
+
+        }
+
+
+
+    </style>
+</head>
+<body>
+<div class = "container">
+    <div>
+        <div>
+            <input type="text" class="display">
+        </div>
+        <div>
+            <input type="text" class="result">
+        </div>
+    <div>
+        <div class="button1">
+        <button onclick="addOutput(1)">1</button>
+        <button onclick="addOutput(2)">2</button>
+        <button onclick="addOutput(3)">3</button>
+        <button onclick="addOutput(4)">4</button>
+        </div>
+        <div class="button1">
+            <button onclick="addOutput(5)">5</button>
+            <button onclick="addOutput(6)">6</button>
+            <button onclick="addOutput(7)">7</button>
+            <button onclick="addOutput(8)">8</button>
+        </div>
+        <div class="button1">
+            <button onclick="addOutput(9)">9</button>
+            <button onclick="addOutput('+')">+</button>
+            <button onclick="addOutput('-')">-</button>
+            <button onclick="addOutput('/')">/</button>
+        </div>
+        <div class="button1">
+            <button onclick="addOutput('*')">*</button>
+            <button onclick="addOutput('c')">c</button>
+            <button onclick="addOutput('ce')">ce</button>
+            <button onclick="addOutput('%')">%</button>
+        </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
